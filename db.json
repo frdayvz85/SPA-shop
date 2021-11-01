@@ -1,0 +1,87 @@
+{
+    "products": [
+      {
+        "title": "Mazda 2",
+        "price": "3000",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+        "id": "yp5hqdyqh9b"
+      },
+      {
+        "title": "Mitsubishi ",
+        "price": "3500",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+        "id": "e79ep31aiwk"
+      },
+      {
+        "id": "vbrrcrvb9lg",
+        "title": "Opel",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+        "price": 400,
+        "inCart": false
+      },
+      {
+        "id": "jop3ymxur9",
+        "title": "Peugeot",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+        "price": 450,
+        "inCart": false
+      },
+      {
+        "id": "b5vcuhjp8r9",
+        "title": "Renault",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+        "price": 500,
+        "inCart": false
+      },
+      {
+        "id": "z60tmp10ba",
+        "title": "SEAT",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+        "price": 550,
+        "inCart": false
+      },
+      {
+        "id": "jko2vslbj4",
+        "title": "Scoda",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+        "price": 600,
+        "inCart": false
+      },
+      {
+        "id": "hxgyij8ixgj",
+        "title": "Suzuki",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+        "price": 650,
+        "inCart": false
+      },
+      {
+        "id": "tdr6kubr2xd",
+        "title": "Tesla",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+        "price": 700,
+        "inCart": false
+      },
+      {
+        "id": "ct4w8vhab5p",
+        "title": "Toyota",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+        "price": 750,
+        "inCart": false
+      },
+      {
+        "id": "vkllhfm09zm",
+        "title": "Ford",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+        "price": 800,
+        "inCart": false
+      },
+      {
+        "id": "m7281hc8os",
+        "title": "Honda",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+        "price": 850,
+        "inCart": false
+      }
+    ],
+    "cart": []
+  }
