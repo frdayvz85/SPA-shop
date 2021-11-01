@@ -8,6 +8,7 @@ import Edit from './components/Edit';
 import Loading from './components/Loading';
 import { BASE_URL } from './api'
 import './App.css';
+import Filter from './components/Filter';
 
 function App() {
   const [view, setView] = useState('main')
@@ -19,6 +20,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('')
   const [message, setMessage] = useState('')
   const [singleProduct, setSingleProduct] = useState()
+  const [sort, setSort] = useState('')
 
 
   useEffect(() => {
@@ -62,24 +64,45 @@ function App() {
 
   //add
   const addToCart = async (product) => {
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        title: product.title,
-        price: product.price,
-        description: product.description,
-        id: product.id,
-        quantity: 1
-      }),
-    };
-    const response = await fetch(`${BASE_URL}/cart`, requestOptions);
-    await response.json();
-    setMessage(product.title + ' added successfully')
-    getCartItems()
-    setTimeout(() => {
-      setMessage('')
-    }, 4000);
+    try {
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: product.title,
+          price: product.price,
+          description: product.description,
+          id: product.id,
+          quantity: 1,
+          inCart: true
+        }),
+      };
+      const requestOptions2 = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: product.title,
+          price: product.price,
+          description: product.description,
+          id: product.id,
+          inCart: true
+        }),
+      };
+
+      const response = await fetch(`${BASE_URL}/cart`, requestOptions);
+      const response2 = await fetch(`${BASE_URL}/products/${product.id}`, requestOptions2);
+
+      await response.json();
+      await response2.json();
+
+      setMessage(product.title + ' added successfully')
+      getCartItems()
+      setTimeout(() => {
+        setMessage('')
+      }, 4000);
+    } catch (error) {
+      console.log(error)
+    }
   };
   //remove from locally not from API
   // const removeFromCart = (product) => {
@@ -110,6 +133,30 @@ function App() {
     }
   }
 
+
+  const sortProducts = (e) => {
+    // impl
+    const sort = e.target.value;
+    console.log(e.target.value);
+    const sortedProducts = products
+      .slice()
+      .sort((a, b) =>
+        sort === "lowest"
+          ? a.price > b.price
+            ? 1
+            : -1
+          : sort === "highest"
+            ? a.price < b.price
+              ? 1
+              : -1
+            : a.id < b.id
+              ? 1
+              : -1
+      )
+    setSort(sort)
+    setProducts(sortedProducts);
+  };
+
   const changeView = (v) => {
     setView(v)
   }
@@ -122,7 +169,10 @@ function App() {
         <button onClick={() => changeView('cart')} className="btn btn-create btn-primary">Cart ({cartItems.length})</button>
       </div>
       {message && <div className="success-text message">{message}</div>}
-      <Search setSearchTerm={setSearchTerm} />
+      <div className="search-filter">
+        <Search setSearchTerm={setSearchTerm} />
+        <Filter sort={sort} sortProducts={sortProducts} />
+      </div>
       <Products
         products={currentProducts}
         loading={loading}

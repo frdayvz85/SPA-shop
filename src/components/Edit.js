@@ -26,7 +26,8 @@ const Edit = ({ changeView, singleProduct, getProducts, setLoading }) => {
             body: JSON.stringify({
                 title: state.title,
                 price: state.price,
-                description: state.description
+                description: state.description,
+                inCart:singleProduct.inCart
             }),
         };
         const response = await fetch(`${BASE_URL}/products/${singleProduct.id}`, requestOptions);

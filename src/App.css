@@ -176,12 +176,27 @@
 .search {
   margin-top: 2rem;
 }
-.search input {
+.search input,
+.filter-sort select {
   width: 100%;
   padding: 10px;
   outline: none;
 }
+.filter-sort select {
+  width: calc(100% - 20px);
+}
 .search input::placeholder {
+  font-family: Poppins;
+}
+.search-filter {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-gap: 20px;
+}
+.filter-sort {
+  margin-top: 2rem;
+}
+.filter-sort option {
   font-family: Poppins;
 }
 /*Search end */
@@ -295,6 +310,17 @@
 @media screen and (max-width: 480px) {
   .form-create h1 {
     font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 560px) {
+  .search-filter {
+    grid-template-columns: 100%;
+  }
+  .filter-sort select {
+    width: calc(100% - 0px);
+  }
+  .filter-sort {
+    margin-top: 0;
   }
 }
 @media screen and (max-width: 880px) {

@@ -62,7 +62,7 @@ const CreateView = ({ changeView, getProducts }) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 title: enteredTitleValue,
-                price: enteredPriceValue,
+                price: Number(enteredPriceValue),
                 description: enteredDescriptionValue,
                 id: new Date(),
                 inCart: false

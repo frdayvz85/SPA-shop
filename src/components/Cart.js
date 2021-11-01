@@ -35,7 +35,8 @@ const Cart = ({ cartItems, changeView, getCartItems }) => {
                     price: product.price,
                     description: product.description,
                     id: product.id,
-                    quantity: product.quantity + 1
+                    quantity: product.quantity + 1,
+                    inCart:true
                 })
             };
 
@@ -57,6 +58,7 @@ const Cart = ({ cartItems, changeView, getCartItems }) => {
                     price: product.price,
                     description: product.description,
                     id: product.id,
+                    inCart:true,
                     quantity: product.quantity === 1 ? removeFromCart(product) : product.quantity - 1
                 })
             };
