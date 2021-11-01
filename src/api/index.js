@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://localhost:5000'
+export const BASE_URL = 'https://fake-shop-api1.herokuapp.com'
